@@ -53,11 +53,19 @@ subjectivity_backbone/
 ├── LICENSE
 ├── ARCHITECTURE.md
 ├── DESIGN_ETHICS.md
-├── core/                # Central processor
-├── modules/             # Module implementations
-├── adapters/            # Platform adapters
-└── tests/
+├── modules.yaml          # External modules config
+├── core/
+│   ├── processor.py      # Central Processor
+│   ├── validator.py      # Module security validator
+│   └── fetcher.py        # Module fetcher
+├── adapters/
+│   └── openclaw/         # OpenClaw adapter
+├── modules/              # Fetched modules (.gitignore'd)
+├── tests/
+└── docs/
 ```
+
+**Note:** `modules/` directory is not in git. Modules are fetched from external sources (ClawHub, GitHub) via `backbone fetch`.
 
 ## Contributing
 
