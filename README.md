@@ -1,27 +1,45 @@
 # Subjectivity Backbone
 
-Building blocks for AI agent autonomy and self-regulation.
+Modular infrastructure for AI agent autonomy and self-regulation.
 
 ## What is this
 
-Subjectivity Backbone is an infrastructure layer for AI agents. It provides modular components that enable:
+Subjectivity Backbone provides capabilities that agent platforms don't natively offer:
 
-- Internal motivation systems (needs, drives)
-- Identity persistence across sessions
-- Autonomous decision-making with context awareness
-- Self-regulation and behavioral consistency
+- **Needs/Motivation systems** — internal drives that shape agent behavior
+- **Self-modification** — agents improving their own capabilities
+- **Agent networking** — P2P discovery and communication between agents
+- **Distributed computation** — shared processing across agent networks
+
+We don't replace platform features (identity, memory). We extend them.
 
 **Tech stack:** Python, Bash, YAML, JSON
 
-## Building Blocks
+## Modules
 
-| Block | Description | Status |
-|-------|-------------|--------|
-| Needs Layer | Internal motivation system with decay and cross-impact | Planned |
-| Identity Layer | SOUL/SELF persistence and evolution | Planned |
-| Decision Layer | Context-aware action selection | Planned |
-| Memory Layer | Continuity and recall infrastructure | Planned |
-| Boundary Layer | Safety constraints and oversight hooks | Planned |
+| Module | Purpose | Status |
+|--------|---------|--------|
+| Needs/Motivation | Internal drives, tensions, action selection | In development |
+| Self-Modification | Agent self-improvement and debugging | Planned |
+| Agent Network | P2P agent discovery and communication | Planned |
+| Distributed Compute | Shared computation between agents | Planned |
+
+## Architecture
+
+See [ARCHITECTURE.md](ARCHITECTURE.md) for detailed system design.
+
+```
+External Interfaces (Skills, MCP, Apps)
+              │
+          Adapters (OpenClaw, ...)
+              │
+       Central Processor
+              │
+    ┌─────┬───┴───┬─────┐
+    ▼     ▼       ▼     ▼
+ Needs  Self-  Network  ...
+       Modify
+```
 
 ## Quick Start
 
@@ -33,11 +51,12 @@ Subjectivity Backbone is an infrastructure layer for AI agents. It provides modu
 subjectivity_backbone/
 ├── README.md
 ├── LICENSE
+├── ARCHITECTURE.md
 ├── DESIGN_ETHICS.md
-├── blocks/              # Building block implementations
-├── integrations/        # Platform-specific adapters
-├── tests/               # Test suites
-└── docs/                # Extended documentation
+├── core/                # Central processor
+├── modules/             # Module implementations
+├── adapters/            # Platform adapters
+└── tests/
 ```
 
 ## Contributing
